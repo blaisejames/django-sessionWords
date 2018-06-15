@@ -1,0 +1,25 @@
+{% extends "base.html" %}
+
+{% block content %}
+    <div class="form">   
+        <form action="/session_words/add_word" method="POST">
+            {% csrf_token %}
+            <h3>Add a New Word</h3>
+            <input type="text" name="word">
+            <p>Choose color</p>
+            <input type="radio" name="color" value="red" checked> Red<br>
+            <input type="radio" name="color" value="blue"> Blue<br>
+            <input type="radio" name="color" value="green"> Green<br><br>
+            <input type="checkbox" name="fontsize" value="big"> Show in BIG fonts! <br>
+            <button type="submit">Add to Session</button>
+        </form>
+    </div>
+    <div class="report">   
+        <form action="/session_words/clear" method ="GET">
+            <button id="red" type="submit">Clear Session</button>
+        </form>
+        {% for item in context reversed %}
+        {{ context.item }}
+        {% endfor %}
+    </div>
+{% endblock content %}
