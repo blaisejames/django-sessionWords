@@ -10,6 +10,7 @@
             <input type="radio" name="color" value="red" checked> Red<br>
             <input type="radio" name="color" value="blue"> Blue<br>
             <input type="radio" name="color" value="green"> Green<br><br>
+            <input type="hidden" name="fontsize" value="">
             <input type="checkbox" name="fontsize" value="big"> Show in BIG fonts! <br>
             <button type="submit">Add to Session</button>
         </form>
@@ -18,8 +19,10 @@
         <form action="/session_words/clear" method ="GET">
             <button id="red" type="submit">Clear Session</button>
         </form>
-        {% for item in context reversed %}
-        {{ context.item }}
+        {% for item in words reversed %}
+        <ul>
+            <li><span class="{{ item.color }} {{ item.fontsize }}">{{ item.word }}</span> - added at {{ item.time }} on {{ item.date }}</li>
+        </ul>
         {% endfor %}
     </div>
 {% endblock content %}

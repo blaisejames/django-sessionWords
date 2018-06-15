@@ -70,7 +70,6 @@ ul.errorlist {
     background: rgba(255, 0, 0, 0.15);
     list-style-position: inside;
     display: block;
-    font-size: 1.2 em;
     margin: 0 0 3px;
     padding: 4px 5px;
     text-align: center;
@@ -92,4 +91,17 @@ h3 {
     color: green;
     border: 1px solid green;
     border-radius: 3px;
+}
+.red {
+    color:red;
+}
+.green {
+    color:green;
+}
+.blue {
+    color:blue;
+}
+.big {
+    font-weight: bold;
+    font-size: 2em;
 }
